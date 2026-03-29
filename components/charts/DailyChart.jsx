@@ -9,7 +9,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import { getWeatherIcon } from "@/lib/weatherIcon";
+import { getWeatherIcon } from "@/lib/utils";
 
 const CustomDot = (props) => {
   const { cx, cy, payload } = props;

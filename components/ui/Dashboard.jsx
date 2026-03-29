@@ -3,8 +3,7 @@ import Image from "next/image";
 import DailyChart from "../charts/DailyChart";
 import HourlyChart from "../charts/HourlyChart";
 import WeatherCard from "./WeatherCard";
-import SearchBar from "./SearchBar";
-import { getWeatherImage } from "@/lib/weatherImage";
+import { getWeatherImage } from "@/lib/utils";
 
 export default function Dashboard({
   weatherData,
@@ -13,10 +12,6 @@ export default function Dashboard({
   favorites,
 }) {
   const weather = weatherData?.current_weather;
-
-  // console.log("Current Weather:", data?.current_weather);
-  // console.log("\nHourly data:\n", data?.hourly);
-  // console.log("\nDaily data:\n", data?.daily);
 
   const hourlyData =
     weatherData?.hourly?.time.slice(0, 24).map((t, i) => ({
@@ -40,7 +35,7 @@ export default function Dashboard({
 
   return (
     <div className="w-full p-4 space-y-10">
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div className="w-full h-50 rounded-xl overflow-hidden shadow-md">
         <Image
           src={weatherImage}
